@@ -37,7 +37,7 @@
 <!-- Additional attributes: data-lang='en-US' (for language) data-href='' (use '' for page URL, 'www.skype.com' for specific URL) -->
 <!-- data-text = 'some message' (to pre-fill the message to that will be shared by the user, use '' to prompt user to enter a message) -->
 
-	<title>Convolutional Neural Network layers helper</title>
+	<title>Convolutional Neural Network helper</title>
 <link rel="dns-prefetch" href="https://unpkg.com/">
 <link rel="dns-prefetch" href="https://s.w.org/">
     <meta name="description" content="Circle area calculator and circumference calculator provide you with a simple way of determining the square footage area for various shapes. Its mathematically accurate and useful for Construction projects, wood workers, home owners, students, and real estate.">
@@ -132,7 +132,7 @@
                   </div>
                                               <div class="dropdown">
                   <h1 class="site-title">
-                    <p>What is Overfitting in supervised learning?
+                    <p>Overfitting and stuff
                     <span class="words"></span>
                     </p>
                   </h1>
@@ -185,13 +185,15 @@
 }
 </style>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
-<h2 class="calc-page__title">Let’s find out!</h2>
+<h2 class="calc-page__title">Let’s dive in AI!</h2>
 
 <h2 class="calc-title">If you are an AI developer, you must have wondered that what is Overfitting exactly?</h2>
 <div class="content">
-<p style="margin-bottom: 0px;">This tool will help you prevent your model from overfitting while training</p>
-<p>Please note, this is only an approxemation results that can be found out by following a set of rules but probably <strong> NOT an optimal one.</strong></p>
-<p>So, every neural network has three types of layers: input layer, hidden layer and output layer. And therefore, creating a NN means coming up with a propreate number of layers and a number of nodes in each one of these layers.</p>
+<p style="margin-bottom: 0px;">I am going to discuss this phenomenon and introduce this tool that could help you prevent your model from overfitting while training</p>
+<p>Please note, this is only an approximation results that can be found out by following a set of rules but probably <strong> NOT an optimal one.</strong></p>
+
+<p><strong>Introduction to NN</strong><p>
+<p>So, every neural network has three types of layers: input layer, hidden layer and output layer. And therefore, creating a NN means coming up with a propriate number of layers and a number of nodes in each one of these layers.</p>
 <p><strong>Input and output layers:</strong><br>
 These two layers are alwayes going to be single layers in almost all types of NN architectures. The number of nodes in each layer will also be one single node.
 </p>
@@ -201,17 +203,36 @@ In hidden layers, the case is different.<br>
 If your data is linearly separable, then you do not need any hidden layer. However, Although a single hidden layer is sufficient for the large majority of problems, sometimes ther could be a huge improvement by adding 2nd or 3rd layer.
 </p><br>
 
-<p><strong>Overfitting issue:</strong>
-Overfitting happens when your model learns the noise along with the data during training it and will definately negativaly impact the performance of it. This means that the noise will be taken with the data by the model and will reduce the ability of the model to generalize.
+<p>As you can see in the figure below, a NN can have more than one hidden layer but the output will have to be a single one.</p>
+<p><img src="NNpic.png" alt="Italian Trulli"></p><br>
+
+
+<p><strong>Overfitting issue:</strong><br>
+Overfitting happens when your model learns the noise along with the data during training it and will definately negativaly impact the performance of it. This means that the noise will be taken with the data by the model and will reduce the ability of the model to generalize.<br>
+If you experience overfitting then the cause could be one of the following reasons:<br> 
+1- Your model is very complex.<br>
+2- Data are not clean and contain noise.<br>
+3- Size of data used to train is not enough. 
+</p><br>
+
+<p><strong>Steps to reduce over-fitting:</strong><br>
+1- Adding more data. This is a very important point and acutally the largest aspect to cause this issue.<br>
+2- Data augmentation. Sometimes even if your model is large enough, it is very good to have data augmentation. This is like having random rotations and zooming in for your data and this will enable the model to recognise the object from different angles.<br>
+		<br><img src="aug.JPG" alt="Italian Trulli"><br>
+<br>3- Add regularization methods such as dropout.<br>
+4- Try to reduce architecture complexity as much as possible.
+</p>
 </div>
 
-<p><strong>Proposed tool for calculation of number of neurons:</strong>
-An additional rule of thumb that helps for supervised learning overfitting is intreduced by <a href="https://stats.stackexchange.com/a/136542">Hub</a> is the following: 
+
+<p><br><strong>Proposed tool for calculation of number of neurons:</strong>
+An additional rule of thumb that helps for supervised learning overfitting is intreduced by <a href="https://stats.stackexchange.com/a/136542">Hub</a> is the following: <br>
 <img src="pic.JPG" alt="Italian Trulli"><br>
 </p><br>
 
 <p> The idea here is that you can usually prevent over-fitting if you keep your number of neurons within the formula above. And therefore, I have created this tool to simplify the usage of this formula and to enable users to quickly calculate the Nh value.
 </p>
+<br>
 <div class="calculator-row row">
 <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12 calculator"><form name="calculator">
 
@@ -221,7 +242,7 @@ An additional rule of thumb that helps for supervised learning overfitting is in
                 </div>
 				
 <div class="input-group">
-                  <label class="label" for="radius_number">number of output neuronst</label>
+                  <label class="label" for="radius_number">number of output neurons</label>
                   <input type="number" step="any" min="0" class="input" id="number2" placeholder="0" required="">
                 </div>
 				
